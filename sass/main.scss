@@ -1,1 +1,168 @@
-// main SASS file
+
+/***********************************************
+                DEFAULTS
+***********************************************/
+
+
+@import "variables", "mixins", "queries";
+
+$lightBlue:  #C7F7FF;
+$medBlue:    #89C0C9;
+$darkBlue:   #3a5E63;
+$lightBrown: #C9A689;
+$darkBrown:  #7C593C;
+$lightGrey:  #d4d4d4;
+$darkGrey:   #222;
+$scottWhite: #fff;
+
+$fontsFamilySansSerifs: ('Josefin Sans', ‘Trebuchet MS’, 'Helvetica', 'sans-serif');
+$fontsFamilySerifs: ('Cardo', ‘Palatino Linotype’, ‘Book Antiqua’, 'Palatino', 'serif');
+
+
+*{
+    padding:0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:after,
+*:before{
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+html{
+    font-size: 16px;
+    font-family: $fontsFamilySansSerifs; /* default for whole page */
+    line-height: 1.6;
+}
+h1, h2, h3, h4{
+    font-family: $fontsFamilySerifs; /* serif for the headings */
+}
+ul{
+    list-style: none;
+}
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix:after{
+    display:table;
+    clear: both;
+    content: "";
+}
+
+/***********************************************
+                LAYOUT - Static
+***********************************************/
+
+
+   /***********************************************
+                Background Layout
+		stays the same no matter the size
+   ***********************************************/
+
+  //.bg-header:before, .bg-header:after
+  // use extend, parent selector, variables, nested
+%extendHeader {
+	content: "";
+	position: absolute;
+	bottom: -1rem;
+	width: 30%;
+	height: 1rem;
+	background-color: $darkBlue;
+}
+
+.bg-header {
+    background-color: $scottWhite;
+    background-color:$lightBlue;
+    color: $darkGrey;
+    border-bottom:1rem solid $medBlue;
+    border-top:1rem solid $darkBlue;
+    position: relative;
+	&:before {
+		@extend %extendHeader;
+		left: 0;
+	}
+	&:after {
+		@extend %extendHeader;
+		right: 0;
+	}
+}
+	
+
+
+// unchanged except for variables //
+
+.bg-focal{
+    background-color: $lightBrown;
+    color: $darkBrown;
+}
+.bg-content1{
+    background-color: $scottWhite;
+    color: $darkGrey;
+}
+.bg-content2{
+    background-color: $lightBlue;
+    color: $darkBlue;
+}
+.bg-footer{
+    background-color: $scottWhite;
+    color: $lightGrey;
+}
+
+
+
+
+/***********************************************
+                HEADER and NAV
+				Combined Layout and Content
+***********************************************/
+
+@include buildHeaderAndNav(sm);
+
+/***********************************************
+               BODY 
+			   Combined Layout and Content
+***********************************************/
+
+@include buildBody(sm);
+
+
+/***********************************************
+        FOOTER - Combined Layout and Content
+***********************************************/
+
+@include buildFooter(sm);
+
+/***********************************************
+                MEDIA QUERIES
+***********************************************/
+
+@media all and (min-width:701px) and (max-width:900px){
+	
+	@include buildHeaderAndNav(md);
+	
+	@include buildBody(md);	
+	
+	@include buildFooter(md); 
+	
+}
+
+
+@media all and (min-width:901px) and (max-width: 1400px){
+	
+	@include buildHeaderAndNav(lg);
+	
+	@include buildBody(lg);
+	
+	@include buildFooter(lg);
+}
+
+
+@media all and (min-width:1401px){	
+	@include buildHeaderAndNav(xl);
+	
+	@include buildBody(xl);
+
+	@include buildFooter(xl);
+}

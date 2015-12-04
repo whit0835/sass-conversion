@@ -1,0 +1,548 @@
+@mixin buildHeaderAndNav($size){
+	@if $size == sm {	  
+		header {
+			width: 400px;
+			margin: 0 auto;
+			position: relative;
+			h1 {
+				width: 100%;
+				padding: 0 2rem;
+				color: $darkBrown;			/**** content ****/
+				letter-spacing: 0.1rem;		/**** content ****/
+				i.fa-lg {
+					display: block;
+					float: left;
+					width: 25%;
+
+					font-size: 7rem;		/**** content ****/
+					line-height: 12.7936rem;/**** content ****/
+					color: $lightBrown;		/**** content ****/
+					~ span {
+						float: right;
+						width: 75%;
+						padding-left: 1rem;
+						font-size: 3.998rem;/**** content ****/
+						text-align: right;	/**** content ****/
+					}
+				}
+			}
+			nav {
+				width: 100%;
+				padding: 2rem 0;
+				clear: both;
+				
+				> ul > li {
+						width: 100%;
+						float: none;
+						background-color: $scottWhite;
+					> a {
+						display: block;
+						padding: 1.0rem 2rem;
+
+						font-size: 1.414rem;
+						line-height: 1;
+
+						text-align: center;		/**** content start ****/
+						text-decoration: none;
+						color: $darkGrey;
+						letter-spacing: 0.25rem;
+						border: 1px solid $lightGrey;
+						border-bottom: none;
+						background-color: $scottWhite; /**** content end ****/
+						&:hover {
+							font-weight: 700;	/**** content ****/
+							color: $lightBlue;	/**** content ****/
+						}
+					}
+				}
+			}
+		}
+	} /* end of sm */
+	
+	@if $size == md {	  
+
+	header {
+		width: 700px;
+		min-height: 8rem;
+		h1 {
+			color: $darkBrown;
+			i.fa-lg {
+				display: inline;
+				float: none;
+				vertical-align: baseline;
+				
+				font-size: 4rem;
+				line-height: 6.3968rem;
+				color: $darkBrown;
+				~ span {
+					float: none;
+					letter-spacing: 0.25rem;
+					text-align: left;
+				}
+			}
+		}
+		&:before {
+			width: 230px;
+		}
+		&:after {
+			width: 230px;
+		}
+		nav {
+			position: static;
+			clear: both;
+			padding: 0;
+			> ul > li {
+				width: 20%;
+				float: left;
+				> a {
+					font-size: 1rem;
+					line-height: 2rem;
+					
+					min-height: 6rem;
+					border: none;
+					border-left: 1px solid $lightGrey;
+					padding: 1.0rem;
+					&:last-child {
+						border-right: 1px solid $lightGrey;
+					}
+				}
+			}
+		}
+	}	
+		
+	}
+	@if $size == lg {	
+			
+	header {
+		width: 900px;
+		margin: 0 auto;
+		&:before {
+			width: 300px;
+		}
+		&:after {
+			width: 300px;
+		}
+		h1 {
+			color: $darkBlue;
+			i.fa-lg {
+				display: inline;
+				color: $darkBlue;
+				vertical-align: baseline;
+				float: none;
+				font-size: 4rem;
+				line-height: 6.3968rem;
+				~ span {
+					float: none;
+					letter-spacing: 0.25rem;
+					font-size: 3.998rem;
+					text-align: left;
+				}
+			}
+		}
+		nav {
+			position: static;
+			clear: both;
+			width: 100%;
+			padding: 0;
+			> ul > li {
+				width: 20%;
+				float: left;
+				background-color: $scottWhite;
+				> a {
+					font-size: 1rem;
+					line-height: 2rem;
+					min-height: 2rem;
+					border: none;
+					border-left: 1px solid $lightGrey;
+					padding: 0 1.0rem;
+					margin: 1.0rem 0;
+					background-color: $scottWhite;
+				}
+				&:first-child a {
+					border-left: none;
+				}
+			}
+		}
+	}
+		
+	}
+	@if $size == xl {	  
+		
+		header {
+			width: 1400px;
+			margin: 0 auto;
+		/*  position: relative; */
+			&:before {
+				width: 450px;
+			}
+			&:after {
+				width: 450px;
+			}
+			h1 {
+				width: 100%;
+			/*  padding: 0 2rem; */	
+				color: $darkBrown;
+			/*  letter-spacing: 0.1rem; */
+				i.fa-lg {
+					display: inline;
+					float: none;
+				/*  width: 25%; */
+
+					font-size: 4rem;
+					line-height: 6.3968rem;
+					color: $lightBlue;
+
+					vertical-align: baseline;
+					~ span {
+						float: none;
+						letter-spacing: 0.25rem;
+						font-size: 3.998rem;
+						text-align: left;
+					}
+				}
+			}
+			nav {
+				width: 100%;
+				padding: 0;
+				position: static;
+			/*  clear: both; */
+				> ul > li {
+					width: 20%;
+					float: left;
+					background-color: $scottWhite;
+					> a {
+						font-size: 1.414rem;
+						line-height: 2rem;
+						min-height: 2rem;
+						border: none;
+						border-left: 1px solid $lightGrey;
+						padding: 0 1.0rem;
+						margin: 1.0rem 0;
+						background-color: $scottWhite;
+					}
+					&:first-child a {
+						border-left: none;
+					}
+				}
+			}
+		}
+		
+	}	
+} /* buildHeaderAndNav */
+
+
+
+
+
+@mixin buildBody($size){
+	@if $size == sm {	  
+
+		
+		section {
+			&.focal {
+				width: 400px;
+				margin: 0 auto;
+			}
+			&.content1 {
+				padding: 2rem 0;
+			}
+			&.content2 {
+				padding: 2rem 0;
+			}
+		}
+		.row {
+			clear: both;
+		}
+		
+		.focal {
+			h2 {
+				line-height: 1.2;
+				font-size: 1.999rem;
+				padding: 2rem 2rem 1rem 2rem;
+			}
+			.author {
+				font-size: 1rem;
+				padding: 0.2rem 2rem 2rem;
+			}
+		}
+		.content1 {
+			h3 {
+				font-size: 1.999rem;
+				padding: 0.2rem 2rem 2rem;
+				i {
+					vertical-align: middle;
+					padding-right: 2rem;
+				}
+			}
+			p {
+				font-size: 1.414rem;
+				padding: 0.5rem 2rem 2rem;
+			}
+		}
+		.content2 {
+			h3 {
+				font-size: 1.999rem;
+				padding: 1rem 2rem 0.5rem;
+			}
+			h4 {
+				font-size: 1.999rem;
+				padding: 1rem 2rem 0;
+			}
+			p {
+				font-size: 1.414rem;
+				padding: 0.5rem 2rem 1rem;
+			}
+			li {
+				font-size: 1.414rem;
+				padding: 0.5rem 2rem;
+			}
+		}
+	}
+	
+	
+	@if $size == md {	  
+
+		section {
+			&.focal {
+				width: 700px;
+				margin: 0 auto;
+			}
+			&.content1 {
+				width: 700px;
+				margin: 0 auto;
+			}
+			&.content2 {
+				width: 700px;
+				margin: 0 auto;
+				h4 {
+					font-size: 1.414rem;
+				}
+				li {
+					font-size: 1.414rem;
+				}
+			}
+		}
+		.col-4 {
+			@include equalSpaced(2, 2%, 100%) ;
+		}
+	
+	}
+	
+	
+	@if $size == lg {	  
+
+		section {
+			&.focal {
+				h2 {
+					width: 600px;
+					margin: 0 auto;
+				}
+				p.author {
+					width: 600px;
+					margin: 0 auto;
+				}
+			}
+			&.content1 {
+				width: 900px;
+				margin: 0 auto;
+				h3 {
+					font-size: 1.999rem;
+					font-weight: 100;
+					.fa-2x {
+						font-size: 1.999rem;
+						padding-right: 1rem;
+					}
+				}
+			}
+			&.content2 {
+				width: 900px;
+				margin: 0 auto;
+				h4 {
+					font-size: 1.414rem;
+				}
+				li {
+					font-size: 1.414rem;
+				}
+				p {
+					font-size: 1rem;
+					font-weight: 400;
+				}
+			}
+		}
+		.col-3 {
+			@include equalSpaced(3, 5%, 100%) ;
+		}
+		.col-4 {
+			@include equalSpaced(4, 4%, 100%) ;
+		}	
+	}
+	
+	
+	@if $size == xl {	  
+
+		section {
+			&.focal {
+				width: 1400px;
+				margin: 0 auto;
+				h2 {
+					width: 600px;
+					margin: 0 auto;
+					font-size: 3.998rem;
+				}
+				p.author {
+					width: 600px;
+					margin: 0 auto;
+				}
+			}
+			&.content1 {
+				width: 1400px;
+				margin: 0 auto;
+				h3 {
+					font-size: 2.827rem;
+					font-weight: 100;
+					.fa-2x {
+						font-size: 2.827rem;
+						padding-right: 1rem;
+						vertical-align: middle;
+					}
+				}
+			}
+			&.content2 {
+				width: 1400px;
+				margin: 0 auto;
+				h4 {
+					font-size: 1.999rem;
+				}
+				li {
+					font-size: 1.999rem;
+				}
+				p {
+					font-size: 1.414rem;
+					font-weight: 400;
+				}
+			}
+		}
+		.col-3 {
+			@include equalSpaced(3, 5%, 100%) ;
+		}
+		.col-4 {
+			@include equalSpaced(4, 4%, 100%) ;
+		}	
+	}
+	
+}
+
+
+@mixin buildFooter($size){
+	
+	@if $size == sm {	  
+
+		footer {
+			
+			margin: 0 auto;
+			padding: 2rem 0;
+			
+			@include footerBasics(sm, $darkGrey){
+				h4[lang=de] {
+					display: block;
+				}
+				h4[lang=en],
+				h4[lang=ar],
+				h4[lang=ru] {
+					display: none;
+				}
+			};
+
+			
+			h4 {
+				font-size: 1.414rem;
+				padding: 0.5rem 2rem;
+				color: $darkBrown;
+			}
+			p {
+				font-size: 1rem;
+				padding: 0.5rem 2rem;
+				color: $darkGrey;
+			}
+			
+			.col-2 {
+				@include equalSpaced( 2, 0%, 100%);		
+				
+				padding-bottom: 2rem;
+				border-left: 1px solid $darkBlue;
+				margin-bottom: 2rem;
+			}
+
+		}
+	}
+
+	@if $size == md {	  
+
+	
+		footer {
+			@include footerBasics(700px, $medBlue){
+				h4[lang=ar] {
+					display: block;
+				}
+				h4[lang=de],
+				h4[lang=en],
+				h4[lang=ru] {
+					display: none;
+				}
+			};
+			
+			.col-2:last-child {
+				unicode-bidi: bidi-override;
+				direction: rtl;
+			}
+
+		}	
+	}
+	
+	@if $size == lg {	  
+
+		footer {			
+			
+			@include footerBasics(900px, $lightBrown){
+				h4[lang=ru] {
+					display: block;
+				}
+				h4[lang=de],
+				h4[lang=ar],
+				h4[lang=en] {
+					display: none;
+				}
+			};
+			
+		}
+	}
+	
+	@if $size == xl {	  
+
+		footer {
+			
+			@include footerBasics(1400px, $medBlue){
+				h4[lang=en] {
+					display: block;
+				}
+				h4[lang = de],
+				h4[lang = ar], 
+				h4[lang = ru] {
+					display: none;
+				}
+			};
+			
+			p {
+				font-size: 1.414rem;
+				letter-spacing: 0.2rem;
+				&:last-child {
+					color: $lightGrey;
+				}
+			}
+						
+		}
+	}
+}
+	
+
+

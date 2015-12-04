@@ -1,0 +1,28 @@
+@mixin equalSpaced( $num_of_cols, $spacing, $width  ){
+  float: left;
+  width: ( $width - ( $spacing * ($num_of_cols - 1) ) ) / $num_of_cols;
+  margin-left: $spacing;
+  
+  // Remove Spacing from First Child
+  &:first-child{
+    margin-left: 0;
+  }
+  
+}
+
+@mixin footerBasics($width, $colur) {
+	@if $width !=sm {width: $width};
+
+	
+	.fa-circle {
+		color: $colur;
+	}
+	
+	@content;
+
+
+}
+
+
+
+
