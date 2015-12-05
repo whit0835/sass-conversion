@@ -9,3 +9,9 @@
 - built each module based on size (sm, md, lg, xl)
 	- where sm is the deafult - mobile first
 
+
+
+
+
+
+problem: 900-1400 the icons in the col-3 are too big !!!

@@ -1,3 +1,9 @@
+/**** buildHeaderAndNav ****/
+/**** buildBody ****/
+/**** buildFooter ****/
+
+
+
 @mixin buildHeaderAndNav($size){
 	@if $size == sm {	  
 		header {
@@ -27,7 +33,7 @@
 						font-size: 3.998rem;/**** content ****/
 					}
 				}
-			}
+			} 
 			nav {
 				padding: 2rem 0;
 				clear: both;
@@ -256,10 +262,11 @@
 			clear: both;
 		}
 		
+		h2,h3,h4 {font-size: 1.999rem;}
+		
 		.focal {
 			h2 {
 				line-height: 1.2;
-				font-size: 1.999rem;
 				padding: 2rem 2rem 1rem 2rem;
 			}
 			.author {
@@ -268,8 +275,8 @@
 			}
 		}
 		.content1 {
+			
 			h3 {
-				font-size: 1.999rem;
 				padding: 0.2rem 2rem 2rem;
 				i {
 					vertical-align: middle;
@@ -283,12 +290,7 @@
 		}
 		.content2 {
 			
-			h3 {
-				font-size: 1.999rem;
-				padding: 1rem 2rem 0.5rem;
-			}
 			h4 {
-				font-size: 1.999rem;
 				padding: 1rem 2rem 0;
 			}
 			p {
@@ -372,6 +374,7 @@
 			margin: 0 auto;
 			&.focal {
 				h2 {
+					width: 600px;
 					font-size: 3.998rem;
 				}
 			}
@@ -396,7 +399,7 @@
 				}
 			}
 		}
-		
+
 		.col-3 {
 			@include equalSpaced(3, 5%, 100%) ;
 		}
