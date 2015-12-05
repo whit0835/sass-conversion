@@ -1,0 +1,11 @@
+
+
+ - combined LAYOUt and CONTENT for all (I don't see a reason top keep seperate)
+ - combined HEADER and NAV (seemed to go together)
+ - modularized into
+	- HEADER and NAV
+	- BODY
+	- FOOTER
+- built each module based on size (sm, md, lg, xl)
+	- where sm is the deafult - mobile first
+

@@ -7,20 +7,20 @@
   &:first-child{
     margin-left: 0;
   }
-  
 }
 
 @mixin footerBasics($width, $colur) {
-	@if $width !=sm {width: $width};
+	@if $width !=sm {
+		h4[lang=de] {
+			display: none;
+		}
+		width: $width};
 
 	
 	.fa-circle {
 		color: $colur;
 	}
-	
 	@content;
-
-
 }
 
 
